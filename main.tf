@@ -2,13 +2,13 @@
 resource "aws_autoscaling_group" "vault" {
   name                      = "tf-vault-${var.region}-asg"
   launch_configuration      = "${aws_launch_configuration.vault.name}"
-  availability_zones        = ["${var.availability-zones}"]
+  availability_zones        = ["${var.availability_zones}"]
   min_size                  = "${var.min_cluster_size}"
   max_size                  = "${var.max_cluster_size}"
   desired_capacity          = "${var.min_cluster_size}"
   health_check_grace_period = 15
   health_check_type         = "EC2"
-  vpc_zone_identifier       = ["${var.subnets}"]
+  vpc_zone_identifier       = ["${var.private_subnets}"]
   target_group_arns         = ["${var.target_group_arn}"]
 
   tag {
