@@ -35,7 +35,7 @@ variable "ami" {
   }
 }
 
-variable "availability-zones" {
+variable "availability_zones" {
   type        = "list"
   description = "Availability zones for launching the Vault instances"
 }
