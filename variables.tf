@@ -69,7 +69,7 @@ variable "vpc_id" {
   description = "VPC ID"
 }
 
-variable "sns_alert_topic" {
+variable "notification_arn" {
   description = "SNS topic to send autoscaling alerts to"
 }
 

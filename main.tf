@@ -29,7 +29,7 @@ resource "aws_autoscaling_notification" "vault_notifications" {
     "autoscaling:EC2_INSTANCE_LAUNCH_ERROR",
   ]
 
-  topic_arn = "${var.sns_alert_topic}"
+  topic_arn = "${var.notification_arn}"
 }
 
 resource "aws_launch_configuration" "vault" {
